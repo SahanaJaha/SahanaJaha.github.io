@@ -26,6 +26,23 @@
 			available. 
 		-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#courses.semesters { display: grid; gap: 1rem; }
+			#courses details {
+				border: 1px solid rgba(255,255,255,0.2);
+				border-radius: 0.5rem;
+				padding: 0.7rem 1rem;
+				background: rgba(255,255,255,0.05);
+			}
+			#courses summary {
+				cursor: pointer;
+				font-weight: 600;
+			}
+			#courses.course-list {
+				margin-top: 0.5rem;
+				padding-left: 1.5rem;
+			}
+		</style>
 	</head>
 	<!-- The body is the location where your site's content will go -->
 	<body class="is-preload">
@@ -172,37 +189,6 @@
 							    </ul>
 							  </details>
 							</section>
-
-							<style>
-							  #courses .semesters { display: grid; gap: 1rem; }
-							  #courses details {
-							    border: 1px solid rgba(255,255,255,0.2);
-							    border-radius: 0.5rem;
-							    padding: 0.7rem 1rem;
-							    background: rgba(255,255,255,0.05);
-							  }
-							  #courses summary {
-							    cursor: pointer;
-							    font-weight: 600;
-							  }
-							  #courses .course-list {
-							    margin-top: 0.5rem;
-							    padding-left: 1.5rem;
-							  }
-							</style>
-
-							<script>
-							  // Optional: Only one dropdown open at a time
-							  document.querySelectorAll("#courses details").forEach((d) => {
-							    d.addEventListener("toggle", () => {
-							      if (d.open) {
-							        document.querySelectorAll("#courses details[open]").forEach((other) => {
-							          if (other !== d) other.open = false;
-							        });
-							      }
-							    });
-							  });
-							</script>
 						</article>
 
 						<!-- Here is a the "Contact" card. -->
@@ -288,6 +274,7 @@
 
 	</body>
 </html>
+
 
 
 
