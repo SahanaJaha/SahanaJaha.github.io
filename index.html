@@ -138,70 +138,71 @@
 							<h2 class="major">Courses Undertaken</h2>
 							<p class="muted">Click a semester to view courses.</p>
 
-<section class="semesters">
-  <details>
-    <summary>Semester 1</summary>
-    <ul class="course-list">
-      <li>MA 105 - Calculus</li>
-      <li>PH 107 - Physics</li>
-      <li>CH 105 - Chemistry</li>
-      <li>CS 101 - Computer Programming</li>
-      <li>HS 101 - Communication Skills</li>
-    </ul>
-  </details>
+							<section class="semesters">
+							  <details>
+							    <summary>Semester 1</summary>
+							    <ul class="course-list">
+							      <li>MA 105 - Calculus</li>
+							      <li>PH 107 - Physics</li>
+							      <li>CH 105 - Chemistry</li>
+							      <li>CS 101 - Computer Programming</li>
+							      <li>HS 101 - Communication Skills</li>
+							    </ul>
+							  </details>
 
-  <details>
-    <summary>Semester 2</summary>
-    <ul class="course-list">
-      <li>MA 108 - Linear Algebra</li>
-      <li>PH 108 - Physics II</li>
-      <li>EE 101 - Electrical Engineering</li>
-      <li>CS 102 - Data Structures</li>
-      <li>HS 102 - Economics</li>
-    </ul>
-  </details>
+							  <details>
+							    <summary>Semester 2</summary>
+							    <ul class="course-list">
+							      <li>MA 108 - Linear Algebra</li>
+							      <li>PH 108 - Physics II</li>
+							      <li>EE 101 - Electrical Engineering</li>
+							      <li>CS 102 - Data Structures</li>
+							      <li>HS 102 - Economics</li>
+							    </ul>
+							  </details>
 
-  <details>
-    <summary>Semester 3</summary>
-    <ul class="course-list">
-      <li>MA 201 - Multivariable Calculus</li>
-      <li>MA 205 - Differential Equations</li>
-      <li>MA 207 - Discrete Mathematics</li>
-      <li>EE 224 - Signals & Systems</li>
-      <li>HS Elective</li>
-    </ul>
-  </details>
-</section>
+							  <details>
+							    <summary>Semester 3</summary>
+							    <ul class="course-list">
+							      <li>MA 201 - Multivariable Calculus</li>
+							      <li>MA 205 - Differential Equations</li>
+							      <li>MA 207 - Discrete Mathematics</li>
+							      <li>EE 224 - Signals & Systems</li>
+							      <li>HS Elective</li>
+							    </ul>
+							  </details>
+							</section>
 
-<style>
-  #courses .semesters { display: grid; gap: 1rem; }
-  #courses details {
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 0.5rem;
-    padding: 0.7rem 1rem;
-    background: rgba(255,255,255,0.05);
-  }
-  #courses summary {
-    cursor: pointer;
-    font-weight: 600;
-  }
-  #courses .course-list {
-    margin-top: 0.5rem;
-    padding-left: 1.5rem;
-  }
-</style>
+							<style>
+							  #courses .semesters { display: grid; gap: 1rem; }
+							  #courses details {
+							    border: 1px solid rgba(255,255,255,0.2);
+							    border-radius: 0.5rem;
+							    padding: 0.7rem 1rem;
+							    background: rgba(255,255,255,0.05);
+							  }
+							  #courses summary {
+							    cursor: pointer;
+							    font-weight: 600;
+							  }
+							  #courses .course-list {
+							    margin-top: 0.5rem;
+							    padding-left: 1.5rem;
+							  }
+							</style>
 
-<script>
-  // Optional: Only one dropdown open at a time
-  document.querySelectorAll("#courses details").forEach((d) => {
-    d.addEventListener("toggle", () => {
-      if (d.open) {
-        document.querySelectorAll("#courses details[open]").forEach((other) => {
-          if (other !== d) other.open = false;
-        });
-      }
-    });
-  });
+							<script>
+							  // Optional: Only one dropdown open at a time
+							  document.querySelectorAll("#courses details").forEach((d) => {
+							    d.addEventListener("toggle", () => {
+							      if (d.open) {
+							        document.querySelectorAll("#courses details[open]").forEach((other) => {
+							          if (other !== d) other.open = false;
+							        });
+							      }
+							    });
+							  });
+							</script>
 						</article>
 
 						<!-- Here is a the "Contact" card. -->
@@ -287,6 +288,7 @@
 
 	</body>
 </html>
+
 
 
 
