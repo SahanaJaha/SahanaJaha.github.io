@@ -77,7 +77,7 @@
 									<a href="#research">Research</a>
 								</li>
 								<li>
-									<a href="#community">Projects</a>
+									<a href="#courses">Courses</a>
 								</li>
 								<li>
 									<a href="#contact">Contact</a>
@@ -133,7 +133,7 @@
 							</p>
 						</article>
 
-						<!-- Here is the "Community" card. -->
+						<!-- Here is the "courses" card. -->
 						<article id="courses">
 							<h2 class="major">Courses Undertaken</h2>
 							<p class="muted">Click a semester to view courses.</p>
@@ -174,18 +174,18 @@
 </section>
 
 <style>
-  #community .semesters { display: grid; gap: 1rem; }
-  #community details {
+  #courses .semesters { display: grid; gap: 1rem; }
+  #courses details {
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 0.5rem;
     padding: 0.7rem 1rem;
     background: rgba(255,255,255,0.05);
   }
-  #community summary {
+  #courses summary {
     cursor: pointer;
     font-weight: 600;
   }
-  #community .course-list {
+  #courses .course-list {
     margin-top: 0.5rem;
     padding-left: 1.5rem;
   }
@@ -193,10 +193,10 @@
 
 <script>
   // Optional: Only one dropdown open at a time
-  document.querySelectorAll("#community details").forEach((d) => {
+  document.querySelectorAll("#courses details").forEach((d) => {
     d.addEventListener("toggle", () => {
       if (d.open) {
-        document.querySelectorAll("#community details[open]").forEach((other) => {
+        document.querySelectorAll("#courses details[open]").forEach((other) => {
           if (other !== d) other.open = false;
         });
       }
@@ -287,6 +287,7 @@
 
 	</body>
 </html>
+
 
 
 
