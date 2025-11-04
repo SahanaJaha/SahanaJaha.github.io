@@ -276,8 +276,22 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+					// Optional: Only one dropdown open at a time
+					document.querySelectorAll("#courses details").forEach((d) => {
+						d.addEventListener("toggle", () => {
+							if (d.open) {
+								document.querySelectorAll("#courses details[open]").forEach((other) => {
+									if (other !== d) other.open = false;
+								});
+							}
+						});
+					});
+				</script>
+
 	</body>
 </html>
+
 
 
 
