@@ -65,7 +65,10 @@
 
 									Try adding "border-radius: 50%;" to the style attribute.
 								-->
-								<img src="images/cat_reading.jpg" style="width:280px; height:280px; object-fit: cover;">
+								<img 
+									id="profileImage"
+									src="images/cat_reading.jpg"
+									style="width:280px; height:280px; object-fit: cover; cursor: pointer;">
 								<!-- 	Here is a paragraph where you can put your position and institution, or
 									a short line about yourself.
 								-->
@@ -75,7 +78,7 @@
 								<!-- Here is a paragraph where you can put a link to your CV -->
 								 <p>
 									<!-- Note you will want to change where this points to! -->
-									<a href="images/Sahana_Photo.jpeg" target="_blank">(For an actual photo of me)</a>
+									<a href="#" id="togglePhoto">(For an actual photo of me)</a>
 								</p>
 								<p>
 									<!-- Note you will want to change where this points to! -->
@@ -302,6 +305,29 @@
 					});
 				</script>
 
+	<script>
+		const img = document.getElementById("profileImage");
+		const link = document.getElementById("togglePhoto");
+
+		const catSrc = "images/cat_reading.jpg";
+		const meSrc = "images/Sahana_Photo.jpeg";
+
+		let showingCat = true;
+
+		link.addEventListener("click", function (e) {
+			e.preventDefault();
+
+			if (showingCat) {
+			img.src = meSrc;
+			link.textContent = "(to see the cat again)";
+			} else {
+			img.src = catSrc;
+			link.textContent = "(For an actual photo of me)";
+			}
+
+			showingCat = !showingCat;
+		});
+	</script>
 	</body>
 </html>
 
