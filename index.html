@@ -42,6 +42,63 @@
 				margin-top: 0.5rem;
 				padding-left: 1.5rem;
 			}
+			/* Sidebar layout */
+			#sidebar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 320px;
+				height: 100vh;
+				padding: 2rem;
+				background: rgba(0,0,0,0.85);
+				color: white;
+				display: none;
+				z-index: 1000;
+			}
+
+			#sidebar h2 {
+				margin-bottom: 1rem;
+			}
+
+			#sidebar nav a {
+				display: block;
+				margin: 0.5rem 0;
+				text-decoration: none;
+			}
+
+			#sidebar button {
+				margin-top: 2rem;
+			}
+
+			/* Shift main content when active */
+			body.split #wrapper {
+				margin-left: 320px;
+				transition: margin 0.4s ease;
+			}
+
+			/* Show sidebar only in split mode */
+			body.split #sidebar {
+				display: block;
+			}
+
+			/* Disable center modal behavior */
+			body.split #header {
+				display: none;
+			}
+
+			body.split #main {
+				position: relative;
+				width: calc(100vw - 320px);
+				height: 100vh;
+				overflow-y: auto;
+			}
+
+			body.split #main article {
+				max-width: 900px;
+				margin: 3rem auto;
+				display: none;
+			}
+
 		</style>
 	</head>
 	<!-- The body is the location where your site's content will go -->
@@ -49,6 +106,23 @@
 
 			<!-- This "div" wraps around all of our content and just changes how things are layed out -->
 			<div id="wrapper">
+				<aside id="sidebar">
+					<h2>Sahana<br>Jahagirdar</h2>
+
+					<img src="images/Sahana_Photo.jpeg" alt="Sahana"
+						style="width:160px; height:160px; border-radius:50%; object-fit:cover;">
+
+					<p><a href="images/Sahana_CV.pdf" target="_blank">Curriculum Vitae</a></p>
+
+					<nav class="vertical-menu">
+						<a href="#about">About Me</a>
+						<a href="#research">Research</a>
+						<a href="#courses">Courses</a>
+						<a href="#contact">Contact</a>
+				</nav>
+
+				<button id="backHome">Back to Main Page</button>
+				</aside>
 
 					<!-- This is where the content that appears on page load exists -->
 					<header id="header">
@@ -328,6 +402,37 @@
 			showingCat = !showingCat;
 		});
 	</script>
+
+	<script>
+		document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+			link.addEventListener('click', e => {
+			e.preventDefault();
+			const target = link.getAttribute('href').substring(1);
+
+			document.body.classList.add('split');
+
+			// Hide all articles
+			document.querySelectorAll('#main article').forEach(a => {
+				a.style.display = 'none';
+			});
+
+			// Show selected article
+			const article = document.getElementById(target);
+			if (article) {
+				article.style.display = 'block';
+			}
+			});
+		});
+
+		document.getElementById('backHome').addEventListener('click', () => {
+			document.body.classList.remove('split');
+
+			document.querySelectorAll('#main article').forEach(a => {
+			a.style.display = '';
+			});
+		});
+	</script>
+
 	</body>
 </html>
 
