@@ -103,6 +103,7 @@
 				overflow-x: hidden;
 
 				display: flex;
+				align-items: center;
 				justify-content: center;
 
 				/* background: linear-gradient(
@@ -111,15 +112,18 @@
 					rgba(30,30,30,0.95) 100%
 				); */
 
-				padding: 3rem 2rem;
+				padding-top: 3rem;
+				padding-bottom: 3rem;
+				padding-left: 0;
+				padding-right: 0;
+
 				box-sizing: border-box;
 			}
 
 
 			body.split #main article {
-				width: 100%;
-				max-width: 900px;
-				margin: 0;
+				width: min(900px, 100%);
+				margin: 0 auto;
 			}
 			/* body.split #main article {
 				max-width: 900px;
@@ -429,6 +433,19 @@
 							<p class="muted">Click a semester to view courses.</p>
 
 							<section class="semesters">
+
+								<details>
+							    <summary>Semester 6</summary>
+							    <ul class="course-list">
+							      <li>CS 228 - Logic for Computer Science</li>
+							      <li>CS 490 - CS R&D Project (Verification of Safety on MDPs)</li>
+							      <li>MA 408 - Measure Theory</li>
+							      <li>MA 450 - Markov Chains and Markov Decision Processes</li>
+							      <li>SI 416 - Optimization</li>
+								  <li>SI 424 - Statistical Inference I </li>
+							    </ul>
+							  </details>
+
 							  <details>
 							    <summary>Semester 5</summary>
 							    <ul class="course-list">
@@ -475,16 +492,16 @@
 						<div class="contact-info">
 							<div class="info-item">
 								<div class="info-label">Email:</div>
-								<div class="info-value">sahana.jahagirdar@iitb.ac.in</div>
+								<div class="info-value">sahanaj@iitb.ac.in</div>
 							</div>
 							<div class="info-item">
 								<div class="info-label">Address:</div>
 								<div class="info-value">Indian Institute of Technology Bombay<br>Powai, Mumbai 400076<br>Maharashtra, India</div>
 							</div>
-							<div class="info-item">
+							<!-- <div class="info-item">
 								<div class="info-label">Office Hours:</div>
 								<div class="info-value">By appointment via email</div>
-							</div>
+							</div> -->
 						</div>
  
 						<h3>Send a Message</h3>
