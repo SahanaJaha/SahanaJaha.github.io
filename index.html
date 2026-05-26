@@ -54,6 +54,7 @@
 				color: white;
 				display: none;
 				z-index: 1000;
+				overflow-y: auto;
 			}
 
 			#sidebar h2 {
@@ -64,6 +65,12 @@
 				display: block;
 				margin: 0.5rem 0;
 				text-decoration: none;
+				color: white;
+				transition: color 0.2s ease;
+			}
+
+			#sidebar nav a:hover {
+				color: #00d4ff;
 			}
 
 			#sidebar button {
@@ -96,9 +103,116 @@
 			body.split #main article {
 				max-width: 900px;
 				margin: 3rem auto;
-				display: none;
 			}
 
+
+			body.split #main article.hidden {
+				display: none !important;
+			}
+ 
+			/* Contact form styling */
+			.contact-form {
+				display: grid;
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+ 
+			.form-group {
+				display: flex;
+				flex-direction: column;
+			}
+ 
+			.form-group label {
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+				color: #fff;
+			}
+ 
+			.form-group input,
+			.form-group textarea {
+				padding: 0.75rem;
+				border: 1px solid rgba(255,255,255,0.2);
+				border-radius: 0.5rem;
+				background: rgba(255,255,255,0.05);
+				color: #fff;
+				font-family: inherit;
+				transition: all 0.2s;
+			}
+ 
+			.form-group input:focus,
+			.form-group textarea:focus {
+				outline: none;
+				border-color: rgba(0,212,255,0.5);
+				background: rgba(0,212,255,0.1);
+			}
+ 
+			.form-group textarea {
+				resize: vertical;
+				min-height: 120px;
+			}
+ 
+			.submit-btn {
+				padding: 0.75rem 1.5rem;
+				background: #00d4ff;
+				color: #000;
+				border: none;
+				border-radius: 0.5rem;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.2s;
+			}
+ 
+			.submit-btn:hover {
+				background: #00e8ff;
+				transform: translateY(-2px);
+			}
+ 
+			.contact-info {
+				display: grid;
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+ 
+			.info-item {
+				display: flex;
+				gap: 1rem;
+				align-items: start;
+			}
+ 
+			.info-label {
+				font-weight: 600;
+				min-width: 100px;
+				color: #00d4ff;
+			}
+ 
+			.info-value {
+				color: #ccc;
+			}
+ 
+			ul.icons {
+				margin-top: 2rem;
+				display: flex;
+				gap: 1rem;
+				list-style: none;
+				padding: 0;
+			}
+ 
+			ul.icons li a {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 40px;
+				height: 40px;
+				border: 1px solid rgba(255,255,255,0.2);
+				border-radius: 50%;
+				transition: all 0.2s;
+			}
+ 
+			ul.icons li a:hover {
+				background: rgba(0,212,255,0.2);
+				border-color: #00d4ff;
+				color: #00d4ff;
+			}
 		</style>
 	</head>
 	<!-- The body is the location where your site's content will go -->
@@ -147,7 +261,7 @@
 									a short line about yourself.
 								-->
 								<p>
-									Third Year Bachelors in Mathematics <br> Indian Institute of Technology Bombay
+									Final Year Bachelors in Mathematics <br> Indian Institute of Technology Bombay
 								</p>
 								<!-- Here is a paragraph where you can put a link to your CV -->
 								 <p>
@@ -224,19 +338,24 @@
 								<!-- 	A <br> tag puts in a break so that the text that follows it displays on
 									the next line.
 								-->
-								<b>Games on Temporal Graphs</b><br>Guide: Prof. Patrick Totzke (University of Liverpool)
+								<b>Games on Temporal Graphs</b><br>
+								<i>Guide: Prof. Patrick Totzke (University of Liverpool)</i>
 							</p>
 							<p>
-								<b>Stone Expansion: Gameplay Analysis</b><br>Guide: Prof. Urban Larsson (IIT Bombay)
+								<b>Stone Expansion: Gameplay Analysis</b><br>
+								<i>Guide: Prof. Urban Larsson (IIT Bombay)</i><br>
 							</p>
 							<p>
-								<b>Algorithmic Number Theory and Algebra</b><br>Python Library Development
+								<b>Algorithmic Number Theory and Algebra</b><br>
+								<i>Python Library Development</i><br>
 							</p>
 							<p>
-								<b>Geometric Algorithms Reading Project</b><br>Computational Geometry: Algorithms and Applications - Marc van Kreveld, Mark Overmars, and Mark de Berg
+								<b>Geometric Algorithms Reading Project</b><br>
+								<i>Computational Geometry: Algorithms and Applications - Marc van Kreveld, Mark Overmars, and Mark de Berg</i><br>
 							</p>
 							<p>
-								<b>Audio Classification on MFCC Coefficients</b><br>Guide: Prof. Vinay Kulkarni
+								<b>Audio Classification on MFCC Coefficients</b><br>
+								<i>Guide: Prof. Vinay Kulkarni</i><br>
 							</p>
 						</article>
 
