@@ -90,13 +90,15 @@
  
 			/* Disable center modal behavior */
 			body.split #header {
-				display: none;
+				opacity: 0;
+				pointer-events: none;
+				visibility: hidden;
 			}
  
 			body.split #main {
 				position: relative;
 				width: calc(100vw - 320px);
-				height: 100vh;
+				/* height: 100vh; */
 				overflow-y: auto;
 				background: linear-gradient(135deg, rgba(20,20,20,0.95) 0%, rgba(30,30,30,0.95) 100%);
 				padding: 0;
@@ -109,14 +111,13 @@
 				background: rgba(0,0,0,0.3);
 				border-radius: 1rem;
 				border: 1px solid rgba(255,255,255,0.1);
-				display: block !important;
 				color: #fff;
 			}
  
-			body.split #main article.hidden {
+			/* body.split #main article.hidden {
 				display: none !important;
 			}
- 
+  */
 			body.split #main article h2 {
 				color: #00d4ff;
 				margin-top: 0;
@@ -581,6 +582,13 @@
 	<script>
 		document.getElementById('backHome').addEventListener('click', () => {
 			location.hash = '';
+		});
+
+		document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+			link.addEventListener('click', e => {
+				e.preventDefault();
+				location.hash = link.getAttribute('href');
+			});
 		});
 
 		const updateSplitMode = () => {
