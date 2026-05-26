@@ -79,8 +79,8 @@
  
 			/* Shift main content when active */
 			body.split #wrapper {
-				margin-left: 320px;
-				transition: margin 0.4s ease;
+				display: flex;
+				margin-left: 0;
 			}
  
 			/* Show sidebar only in split mode */
@@ -97,8 +97,10 @@
  
 			body.split #main {
 				position: relative;
-				width: calc(100vw - 320px);
+				flex: 1;
+
 				overflow-y: auto;
+				overflow-x: hidden;
 
 				display: flex;
 				justify-content: center;
@@ -110,7 +112,10 @@
 				); */
 
 				padding: 3rem 2rem;
+				box-sizing: border-box;
 			}
+
+
 			body.split #main article {
 				width: 100%;
 				max-width: 900px;
