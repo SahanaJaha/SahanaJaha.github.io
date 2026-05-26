@@ -582,6 +582,17 @@
 		document.getElementById('backHome').addEventListener('click', () => {
 			location.hash = '';
 		});
+
+		const updateSplitMode = () => {
+			if (location.hash && location.hash !== '#') {
+				document.body.classList.add('split');
+			} else {
+				document.body.classList.remove('split');
+			}
+		};
+
+		window.addEventListener('hashchange', updateSplitMode);
+		window.addEventListener('load', updateSplitMode);
 	</script>
 
 	</body>
