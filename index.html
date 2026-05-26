@@ -27,7 +27,7 @@
 		-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			#courses.semesters { display: grid; gap: 1rem; }
+#courses.semesters { display: grid; gap: 1rem; }
 			#courses details {
 				border: 1px solid rgba(255,255,255,0.2);
 				border-radius: 0.5rem;
@@ -56,11 +56,11 @@
 				z-index: 1000;
 				overflow-y: auto;
 			}
-
+ 
 			#sidebar h2 {
 				margin-bottom: 1rem;
 			}
-
+ 
 			#sidebar nav a {
 				display: block;
 				margin: 0.5rem 0;
@@ -68,38 +68,40 @@
 				color: white;
 				transition: color 0.2s ease;
 			}
-
+ 
 			#sidebar nav a:hover {
 				color: #00d4ff;
 			}
-
+ 
 			#sidebar button {
 				margin-top: 2rem;
 			}
-
+ 
 			/* Shift main content when active */
 			body.split #wrapper {
 				margin-left: 320px;
 				transition: margin 0.4s ease;
 			}
-
+ 
 			/* Show sidebar only in split mode */
 			body.split #sidebar {
 				display: block;
 			}
-
+ 
 			/* Disable center modal behavior */
 			body.split #header {
 				display: none;
 			}
-
+ 
 			body.split #main {
 				position: relative;
 				width: calc(100vw - 320px);
 				height: 100vh;
 				overflow-y: auto;
+				background: linear-gradient(135deg, rgba(20,20,20,0.95) 0%, rgba(30,30,30,0.95) 100%);
+				padding: 0;
 			}
-
+ 
 			body.split #main article {
 				max-width: 900px;
 				margin: 3rem auto;
@@ -110,9 +112,42 @@
 				display: block !important;
 				color: #fff;
 			}
-
+ 
 			body.split #main article.hidden {
 				display: none !important;
+			}
+ 
+			body.split #main article h2 {
+				color: #00d4ff;
+				margin-top: 0;
+			}
+ 
+			body.split #main article h3 {
+				color: #00d4ff;
+				margin-top: 2rem;
+			}
+ 
+			body.split #main article p {
+				color: #ccc;
+				line-height: 1.6;
+			}
+ 
+			body.split #main article a {
+				color: #00d4ff;
+				text-decoration: none;
+				border-bottom: 1px solid rgba(0,212,255,0.3);
+			}
+ 
+			body.split #main article a:hover {
+				border-bottom-color: #00d4ff;
+			}
+ 
+			body.split #main article ul {
+				color: #ccc;
+			}
+ 
+			body.split #main article details {
+				color: #ccc;
 			}
  
 			/* Contact form styling */
@@ -142,6 +177,11 @@
 				color: #fff;
 				font-family: inherit;
 				transition: all 0.2s;
+			}
+ 
+			.form-group input::placeholder,
+			.form-group textarea::placeholder {
+				color: rgba(255,255,255,0.5);
 			}
  
 			.form-group input:focus,
@@ -211,6 +251,7 @@
 				border: 1px solid rgba(255,255,255,0.2);
 				border-radius: 50%;
 				transition: all 0.2s;
+				color: #fff;
 			}
  
 			ul.icons li a:hover {
@@ -410,60 +451,70 @@
 						</article>
 
 						<!-- Here is a the "Contact" card. -->
-						<article id="contact">
-							<h2 class="major">Contact</h2>
-							<p> 
-								<b>Email: example</b> 
-							</p>
-							<p> 
-								<b>Address:</b> 
-							</p>
-
-							<!-- 	Here are the fancy icons that link to your social media.
-								These icons are rendered using Font Awesome fonts, and you can find more icons
-								here: https://fontawesome.com/icons
-							-->
-							<ul class="icons">
-								<!-- The Twitter icon -->
-								<li>
-									<!-- 	Note that you need to change the link to point to your page.
-										Replace "#" with your Twitter profile page.
-									-->
-									<a href="#" class="icon fa-twitter">
-										<span class="label">Twitter</span>
-									</a>
-								</li>
-								<!-- The Facebook icon -->
-								<li>
-									<a href="#" class="icon fa-facebook">
-										<span class="label">Facebook</span>
-									</a>
-								</li>
-								<!-- The Instagram icon -->
-								<li>
-									<a href="#" class="icon fa-instagram">
-										<span class="label">Instagram</span>
-									</a>
-								</li>
-								<!-- The GitHub icon -->
-								<li>
-									<a href="#" class="icon fa-github">
-										<span class="label">GitHub</span>
-									</a>
-								</li>
-								<!-- 	We can add a new icon by searching on the Font Awesome website
-									for the correct class name and inserting it as a new list item.
-
-									We found "envelope" here: https://fontawesome.com/icons/envelope
-								-->
-								<!-- <li>
-									<a href="#" class="icon fa-envelope">
-										<span class="label">Email</span>
-									</a>
-								</li> -->
-							</ul>
-						</article>
-					</div>
+					<article id="contact">
+						<h2 class="major">Contact</h2>
+						
+						<div class="contact-info">
+							<div class="info-item">
+								<div class="info-label">Email:</div>
+								<div class="info-value">sahana.jahagirdar@iitb.ac.in</div>
+							</div>
+							<div class="info-item">
+								<div class="info-label">Address:</div>
+								<div class="info-value">Indian Institute of Technology Bombay<br>Powai, Mumbai 400076<br>Maharashtra, India</div>
+							</div>
+							<div class="info-item">
+								<div class="info-label">Office Hours:</div>
+								<div class="info-value">By appointment via email</div>
+							</div>
+						</div>
+ 
+						<h3>Send a Message</h3>
+						<form class="contact-form" onsubmit="return handleFormSubmit(event)">
+							<div class="form-group">
+								<label for="name">Name</label>
+								<input type="text" id="name" name="name" placeholder="Your name" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+							</div>
+							<div class="form-group">
+								<label for="subject">Subject</label>
+								<input type="text" id="subject" name="subject" placeholder="Message subject" required>
+							</div>
+							<div class="form-group">
+								<label for="message">Message</label>
+								<textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+							</div>
+							<button type="submit" class="submit-btn">Send Message</button>
+						</form>
+ 
+						<h3 style="margin-top: 3rem;">Follow Me</h3>
+						<ul class="icons">
+							<li>
+								<a href="https://twitter.com" class="icon fa-twitter" title="Twitter">
+									<span class="label">Twitter</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com" class="icon fa-github" title="GitHub">
+									<span class="label">GitHub</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://linkedin.com" class="icon fa-linkedin" title="LinkedIn">
+									<span class="label">LinkedIn</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://instagram.com" class="icon fa-instagram" title="Instagram">
+									<span class="label">Instagram</span>
+								</a>
+							</li>
+						</ul>
+					</article>
+				</div>
 
 					<!-- This is the footer that appears at the bottom of the page -->
 					<footer id="footer">
