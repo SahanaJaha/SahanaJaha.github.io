@@ -579,32 +579,8 @@
 	</script>
 
 	<script>
-		document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-			link.addEventListener('click', e => {
-			e.preventDefault();
-			const target = link.getAttribute('href').substring(1);
-
-			document.body.classList.add('split');
-
-			// Hide all articles
-			document.querySelectorAll('#main article').forEach(a => {
-				a.style.display = 'none';
-			});
-
-			// Show selected article
-			const article = document.getElementById(target);
-			if (article) {
-				article.style.display = 'block';
-			}
-			});
-		});
-
 		document.getElementById('backHome').addEventListener('click', () => {
-			document.body.classList.remove('split');
-
-			document.querySelectorAll('#main article').forEach(a => {
-			a.style.display = '';
-			});
+			location.hash = '';
 		});
 	</script>
 
